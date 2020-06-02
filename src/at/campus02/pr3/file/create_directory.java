@@ -1,35 +1,35 @@
 package at.campus02.pr3.file;
 
 import java.io.File;
+import java.util.Scanner;
 
 public class create_directory {
 
     public static void main(String[] args) {
-        /*
-        Tip: use delete(File file), renameTo(File dest)
-        Create a Method,
-            - which creates 10 Files.
-            - save all File Information in a List
-            - rename all files (print to console original name + name after renaming: example test.txt -> test_neu.txt + Status
-            - delete all files and print filename and the status of the deletion.
+       // mkdir() - creates Directory
+       // mkdirs() - creates Directories
 
-         */
+        System.out.println("Enter the path to create a directory: ");
 
-        File dir = new File("C:");
-        printDirectoryContent(dir);
-    }
+        // Benutzereingabe initialitsieren
+        Scanner scanner = new Scanner(System.in);
+        // C:\
+        String path = scanner.next();
+        // Ordner, welcher erstellt werden soll
+        System.out.println("Enter the name of the desired directory: ");
+        path = path+scanner.next();
 
-    public static void printDirectoryContent(File f) {
-        if (f.isDirectory()) {
-            // Variable initialized
-            long filesize = 0;
-            // Go trough the directory; listFiles() returns an array of Files (Objects)
-            for (File file : f.listFiles()) {
-                System.out.println("Filename: " + file.getName() + "Size: " + file.length());
-                filesize = filesize + file.length();
-            }
-            // print out the complete size of the directory
-            System.out.println(filesize);
+        // Create a File object
+        File file = new File(path);
+
+        boolean created = file.mkdir();
+        if(created){
+            System.out.println("Directory was created");
         }
+        else{
+            System.out.println("Not a directory");
+        }
+
     }
+
 }
