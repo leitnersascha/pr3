@@ -7,7 +7,7 @@ import java.io.IOException;
 public final class CatchInsideFinally {
 
     public static void main(String... args) {
-        catchInsideFinally("umlaute.txt");
+        catchInsideFinally("umlfafute.txt");
     }
 
     private static void catchInsideFinally(String fileName) {

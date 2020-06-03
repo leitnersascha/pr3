@@ -1,13 +1,14 @@
 package at.campus02.pr3.textinput.exceptionhandling;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
 public final class NestedFinally {
 
     public static void main(String... args) {
-        nestedFinally("umlaute.txt");
+        nestedFinally("umflaute.txt");
     }
 
     private static void nestedFinally(String fileName) {
@@ -25,7 +26,12 @@ public final class NestedFinally {
                 //the outer catch block
                 reader.close();
             }
+        } catch (FileNotFoundException ex) {
+            System.out.println(1);
+            ex.printStackTrace();
+            System.out.println(ex.getMessage());
         } catch (IOException ex) {
+            System.out.println(2);
             ex.printStackTrace();
         }
     }

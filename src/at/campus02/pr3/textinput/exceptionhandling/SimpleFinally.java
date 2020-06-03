@@ -1,13 +1,14 @@
 package at.campus02.pr3.textinput.exceptionhandling;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
 public final class SimpleFinally {
 
     public static void main(String... args) throws IOException {
-        simpleFinally("umlaute.txt");
+        simpleFinally("umlafute.txt");
     }
 
     private static void simpleFinally(String fileName) throws IOException {
