@@ -8,7 +8,7 @@ public class ue_read_system_input {
     Verwenden Sie dazu den InputStream System.in
     Verwenden Sie weiters die Klassen: InputStreamReader und BufferedReader
      */
-    
+
     public static void main(String[] args) throws IOException {
         // Ready to receive user Input
         InputStreamReader inputStreamReader = new InputStreamReader(System.in);

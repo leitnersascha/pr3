@@ -19,8 +19,8 @@ public class ue_read_system_input_ExceptionHandling {
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
         // Zeile für Zeile wird eingelesen.
+        String line;
         try {
-            String line;
             while ((line = bufferedReader.readLine()) != null) {
                 System.out.println(line);
                 // Check if the input is STOP
@@ -35,14 +35,12 @@ public class ue_read_system_input_ExceptionHandling {
             try {
                 // BR wird geschlossen
                 bufferedReader.close();
+                // Information, dass das Programm vorbei ist.
+                System.out.println("Closed");
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            // Information, dass das Programm vorbei ist.
-            System.out.println("Closed");
 
         }
-
-
     }
 }
