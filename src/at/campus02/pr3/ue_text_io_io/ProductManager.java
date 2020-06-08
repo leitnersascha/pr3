@@ -25,9 +25,11 @@ public class ProductManager {
                 bufferedWriter.flush();
                 bufferedWriter.close();
             } catch (IOException e) {
+                // function - DB
                 e.printStackTrace();
             }
         } catch (IOException e) {
+            // andere Funtion
             e.printStackTrace();
         }
         System.out.println("Product Information successfully saved.");
