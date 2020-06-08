@@ -11,32 +11,52 @@ public class ProductManager {
         productList.add(p);
     }
 
-    public void saveToFile(String path) throws IOException {
+    public void saveToFile(String path) {
         File file = new File(path);
-        FileWriter fileWriter = new FileWriter(file);
-        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-
-        for (Product p : productList) {
-            bufferedWriter.write(p.toString());
-            bufferedWriter.newLine();
+        FileWriter fileWriter = null;
+        try {
+            fileWriter = new FileWriter(file);
+            try {
+                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                for (Product p : productList) {
+                    bufferedWriter.write(p.toString());
+                    bufferedWriter.newLine();
+                }
+                bufferedWriter.flush();
+                bufferedWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-        bufferedWriter.flush();
-        bufferedWriter.close();
-        System.out.println("Saving Done");
+        System.out.println("Product Information successfully saved.");
     }
 
-    public void readFromFile(String path) throws IOException {
-        FileReader fileReader = new FileReader(path);
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
+    public void readFromFile(String path) {
+        FileReader fileReader = null;
+        BufferedReader bufferedReader = null;
+        try {
+            fileReader = new FileReader(path);
+            bufferedReader = new BufferedReader(fileReader);
 
-        String line;
-        while ((line = bufferedReader.readLine()) != null) {
-            System.out.println(line);
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                bufferedReader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
-        bufferedReader.close();
-        System.out.println("Read finished");
+        System.out.println("Product Information successfully read.");
     }
 
 }

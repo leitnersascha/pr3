@@ -35,9 +35,6 @@ public class ue_write_file_from_user_input {
         // flush() löst das Schreiben aus
         printWriter.flush();
 
-        // close() gibt die Datei wieder frei
-        printWriter.close();
-
     }
 
 }
