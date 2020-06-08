@@ -10,7 +10,7 @@ public class read_binary_data {
 
     public static void main(String[] args) throws IOException {
         // Repräsentiert eine Datei auf dem Dateisystem
-        File file = new File("campus02-test.txt");
+        File file = new File("test-output.txt");
 
         // FileInputStream stellt eine Verbindung zur Datei her. Datei wird geöffnet.
         FileInputStream fileInputStream = new FileInputStream(file);
