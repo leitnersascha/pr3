@@ -1,4 +1,4 @@
-package at.campus02.pr3.threads.ok.example1;
+package at.campus02.pr3.threads.ok.example2;
 
 public class Person implements Runnable {
 
@@ -8,9 +8,15 @@ public class Person implements Runnable {
         this.name = name;
     }
 
+    private boolean isRunning = true;
+
+    public void requestShutDown() {
+        isRunning = false;
+    }
+
     @Override
     public void run() {
-        for (int i = 0; i < 10; i++) {
+        while (isRunning) {
             System.out.println(name);
             try {
                 Thread.sleep(100);
@@ -20,3 +26,5 @@ public class Person implements Runnable {
         }
     }
 }
+
+

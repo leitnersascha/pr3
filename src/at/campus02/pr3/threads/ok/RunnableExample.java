@@ -1,4 +1,4 @@
-package at.campus02.pr3.threads;
+package at.campus02.pr3.threads.ok;
 
 public class RunnableExample implements Runnable {
 

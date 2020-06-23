@@ -1,4 +1,4 @@
-package at.campus02.pr3.threads.ok.example2;
+package at.campus02.pr3.threads.ok.example4;
 
 public class main {
     public static void main(String[] args) {
@@ -10,12 +10,6 @@ public class main {
 
         thread1.start();
         thread2.start();
-
-        System.out.println("Enter something");
-        ConsoleHelper.readLine();
-
-        person1.requestShutDown();
-        person2.requestShutDown();
 
         try {
             thread1.join();

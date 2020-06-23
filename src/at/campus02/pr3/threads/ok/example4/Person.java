@@ -1,4 +1,4 @@
-package at.campus02.pr3.threads.ok.example4.example2;
+package at.campus02.pr3.threads.ok.example4;
 
 public class Person implements Runnable {
 
@@ -8,23 +8,27 @@ public class Person implements Runnable {
         this.name = name;
     }
 
-    private boolean isRunning = true;
-
-    public void requestShutDown() {
-        isRunning = false;
-    }
+    private static Object lock = new Object();
 
     @Override
     public void run() {
-        while (isRunning) {
-            System.out.println(name);
-            try {
-                Thread.sleep(100);
-            } catch (Exception e) {
-                e.printStackTrace();
+        // Während dieser Synchornized-Block ausgeführt wird, darf
+        // kein anderer, der sich auf das selbe "Sperr-Objekt bezieht",
+        // ausgeführt werden.
+        synchronized (lock) {
+            for (int i = 0; i < 10; i++) {
+                System.out.println(name);
+                try {
+                    Thread.sleep(100);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
+
 }
+
+
 
 

@@ -22,7 +22,7 @@ public class ue_read_binary_data_buffered_reader {
 
     /*
     TODO:
-    Schreiben Sie ein Programm, welches von einer Datei alle Zeichen einfließt und auf der Konsole ausgibt.
+    Schreiben Sie ein Programm, welches von einer Datei alle Zeichen einfließt und auf der Konsole ausgibt. (Effizient!)
     Zählen Sie die Anzahl der eingelesenen Zeichen und geben Sie die Gesamtanzahl am Ende aus.
      */
 

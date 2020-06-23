@@ -1,4 +1,4 @@
-package at.campus02.pr3.threads.ok.example4;
+package at.campus02.pr3.threads.ok.example4v2.example4;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

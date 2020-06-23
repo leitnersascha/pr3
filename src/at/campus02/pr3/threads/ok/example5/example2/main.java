@@ -1,4 +1,4 @@
-package at.campus02.pr3.threads.ok.example2;
+package at.campus02.pr3.threads.ok.example5.example2;
 
 public class main {
     public static void main(String[] args) {

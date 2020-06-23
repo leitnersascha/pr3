@@ -1,14 +1,14 @@
-package at.campus02.pr3.threads;
+package at.campus02.pr3.threads.ok;
 
-public class MultiThreads_thread extends Thread {
+public class ThreadExample extends Thread {
     public void run() {
         System.out.println("thread is running...");
     }
 
     public static void main(String args[]) {
-        MultiThreads_thread t1 = new MultiThreads_thread();
+        ThreadExample t1 = new ThreadExample();
         t1.start();
-        MultiThreads_thread t2 = new MultiThreads_thread();
+        ThreadExample t2 = new ThreadExample();
         t2.start();
     }
 }

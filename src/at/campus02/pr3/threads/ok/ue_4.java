@@ -8,5 +8,5 @@ System.out.println(d.toString())
 Per Tastendruck soll die Anwendung (und der Thread „höflich“) gestoppt werden können.
  */
 
-public class ue_2 {
+public class ue_4 {
 }
