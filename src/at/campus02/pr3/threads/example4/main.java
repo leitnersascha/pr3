@@ -1,11 +1,9 @@
 package at.campus02.pr3.threads.example4;
 
-import at.campus02.pr3.threads.example4v2.Person;
-
 public class main {
     public static void main(String[] args) {
-        at.campus02.pr3.threads.example4v2.Person person1 = new at.campus02.pr3.threads.example4v2.Person("Name1");
-        at.campus02.pr3.threads.example4v2.Person person2 = new Person("Name2");
+        Person person1 = new Person("Name1");
+        Person person2 = new Person("Name2");
 
         Thread thread1 = new Thread(person1);
         Thread thread2 = new Thread(person2);
