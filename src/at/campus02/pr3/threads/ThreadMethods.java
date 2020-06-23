@@ -11,7 +11,6 @@ public class ThreadMethods implements Runnable {
         try {
             thread.sleep(1000);
         } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         thread.setPriority(1);

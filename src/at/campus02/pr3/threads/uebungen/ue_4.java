@@ -1,4 +1,4 @@
-package at.campus02.pr3.threads.ok;
+package at.campus02.pr3.threads.uebungen;
 
 /*
 Schreiben Sie eine Konsolenanwendung mit einem Hintergrund-Thread, welcher im Sekundentakt die aktuelle Uhrzeit ausgibt
@@ -8,5 +8,5 @@ System.out.println(d.toString())
 Per Tastendruck soll die Anwendung (und der Thread „höflich“) gestoppt werden können.
  */
 
-public class ue_5 {
+public class ue_4 {
 }

@@ -1,4 +1,4 @@
-package at.campus02.pr3.threads.ok;
+package at.campus02.pr3.threads;
 
 public class ThreadExample extends Thread {
     public void run() {

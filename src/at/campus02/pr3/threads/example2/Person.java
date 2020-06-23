@@ -1,4 +1,4 @@
-package at.campus02.pr3.threads.ok.example5.example2;
+package at.campus02.pr3.threads.example2;
 
 public class Person implements Runnable {
 
