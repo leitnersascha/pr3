@@ -12,11 +12,13 @@ public class Demo {
         t1.start();
         t2.start();
 
-        System.out.println("Dr�cken Sie eine Taste um zu stoppen ...");
-        ConsoleHelper.readLine();
+        System.out.println("Bitte drücken Sie eine Tasten, um die Threads zu stoppen.");
 
-        w1.requestShutDown();
-        w2.requestShutDown();
+
+        if (ConsoleHelper.readline() != null) {
+            w1.requestShutDown();
+            w2.requestShutDown();
+        }
 
         try {
             t1.join();

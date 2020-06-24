@@ -17,6 +17,7 @@ public class Worker implements Runnable {
                 e.printStackTrace();
             }
             System.out.println(i + " " + Thread.currentThread().getName() + " " + sign);
+
         }
 
     }
