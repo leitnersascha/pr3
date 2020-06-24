@@ -14,21 +14,29 @@ public class Demo {
 
         System.out.println("Bitte drücken Sie eine Tasten, um die Threads zu stoppen.");
 
-
         if (ConsoleHelper.readline() != null) {
             w1.requestShutDown();
+            System.out.println(t1.getState());
+            System.out.println(t2.getState());
+        }
+
+        if (ConsoleHelper.readline() != null) {
             w2.requestShutDown();
+            System.out.println(t1.getState());
+            // t2.stop(); - deprecated!
+            System.out.println(t2.getState());
         }
 
         try {
             t1.join();
             t2.join();
+            System.out.println(t1.getState());
+            System.out.println(t2.getState());
         } catch (Exception e) {
             e.printStackTrace();
         }
 
 
         System.out.println("Fertig!");
-
     }
 }
