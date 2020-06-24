@@ -1,31 +1,25 @@
-package at.campus02.pr3.threads.example2;
+package at.campus02.pr3.threads.example2.test;
 
 public class Worker implements Runnable {
-    private boolean isRunning = true;
-
     private char sign;
-
+    boolean isRunnning = true;
     public Worker(char sign) {
         this.sign = sign;
     }
-
-    public void requestShutDown() {
-        isRunning = false;
+    public void requestShutDown(){
+        isRunnning = false;
     }
-
-
     @Override
     public void run() {
         for (int i = 0; i < 1000; i++) {
-            if (isRunning) {
+            if (isRunnning) {
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(1000);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                System.out.println(i + " " + Thread.currentThread().getName() + " " + sign);
-            }
-            if (!isRunning){
+                System.out.println(i + Thread.currentThread().getName() + " " + sign);
+            }else {
                 break;
             }
         }
