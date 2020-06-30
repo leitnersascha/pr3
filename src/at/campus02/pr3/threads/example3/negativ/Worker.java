@@ -4,7 +4,7 @@ public class Worker implements Runnable {
 
 	private char sign;
 	
-	private final int count = 100;
+	private final int count = 10;
 	private final int sleepIntervall = 10;
 	
 	private Konto k1;
