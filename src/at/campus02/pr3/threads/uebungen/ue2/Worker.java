@@ -1,4 +1,4 @@
-package at.campus02.pr3.threads.uebungen.ue1.ue2;
+package at.campus02.pr3.threads.uebungen.ue2;
 
 import java.util.Date;
 
