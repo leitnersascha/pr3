@@ -34,17 +34,17 @@ public class CommunicateViaSocket
 			String line;
 			while ((line = br.readLine()) != null)
 			{
-				if (line.startsWith("<!DOCTYPE"))
+				if (line.startsWith("<!DOCTYPE")) // Hier möchte ich nur die Response auslesen und nicht den Content.
 					break;
 				System.out.println(line);
 			}
 
-			pw = new PrintWriter("content.html");
+			pw = new PrintWriter("content.html"); // neues file content.html wird erstellt
 			do
 			{
-				pw.println(line);
+				pw.println(line); // content wird hier reingeschrieben (HTML content)
 			}
-			while ((line = br.readLine()) != null);
+			while ((line = br.readLine()) != null); // bis keine repsonse zurück kommt.
 
 		}
 		catch (UnknownHostException e)
