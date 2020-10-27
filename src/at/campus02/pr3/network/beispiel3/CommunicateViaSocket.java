@@ -20,14 +20,14 @@ public class CommunicateViaSocket
 
 		try
 		{
-			socket = new Socket("www.wetter.at", 80);
+			socket = new Socket("www.acoela.myspecies.info", 80);
 			bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 			br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-			bw.write("GET /wetter/oesterreich/steiermark/graz/index.html HTTP/1.1");
-			bw.newLine();
-			bw.write("Host: www.wetter.at");
-			bw.newLine();
+			bw.write("GET /en HTTP/1.1");
+			bw.newLine(); // New line, da sonst eine Zeile gesendet werden würde also GET request + Host, dies sollte aber getrennt sein. (mittels zeilenumbruch)
+			bw.write("Host: www.acoela.myspecies.info");
+			bw.newLine(); // Das könnte man weglöschen
 			bw.newLine();
 			bw.flush();
 
