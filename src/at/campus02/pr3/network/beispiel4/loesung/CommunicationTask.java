@@ -31,24 +31,24 @@ public class CommunicationTask implements Runnable
 			br = new BufferedReader(new InputStreamReader(connectionToClient.getInputStream()));
 			bw = new BufferedWriter(new OutputStreamWriter(connectionToClient.getOutputStream()));
 
-			bw.write("HELLO");
+			bw.write("HELLO"); // Server gibt ein initiales Hallo zurück
 			bw.newLine();
-			bw.flush();
+			bw.flush(); // Flushen, um den Befehl durchzuführen
 
 			String command;
-			while ((command = br.readLine()) != null)
+			while ((command = br.readLine()) != null) // Zeilenweise Input auslesen
 			{
 				if ("TIME".equals(command))
 				{
 					Calendar cal = GregorianCalendar.getInstance();
 					bw.write(cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE) + ":"
-							+ cal.get(Calendar.SECOND));
+							+ cal.get(Calendar.SECOND)); // aktuelle Zeit zurückgeben
 					bw.newLine();
 					bw.flush();
 				}
 				else if ("PORT".equals(command))
 				{
-					bw.write("Port:" + connectionToClient.getPort());
+					bw.write("Port:" + connectionToClient.getPort()); // aktuell verwendenten Port zurückgegben
 					bw.newLine();
 					bw.flush();
 				}

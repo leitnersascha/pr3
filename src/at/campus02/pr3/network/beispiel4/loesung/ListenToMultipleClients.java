@@ -17,16 +17,16 @@ public class ListenToMultipleClients
 		try
 		{
 			System.out.println("Starte Server");
-			server = new ServerSocket(9090);
-			server.setSoTimeout(30000);
+			server = new ServerSocket(9090); // Definition des Server Ports
+			server.setSoTimeout(30000); // Servers lebt für eine definierte Zeit
 			while (true)
 			{
 				try
 				{
-					connectionToClient = server.accept();
-					Thread t = new Thread(new CommunicationTask(connectionToClient));
-					t.start();
-					clients.add(t);
+					connectionToClient = server.accept(); // Server ist bereit Verbindungen zu akzeptieren
+					Thread t = new Thread(new CommunicationTask(connectionToClient)); // Thread wird erstellt und parallel clients zu bearbeiten.
+					t.start(); // starten den Thread
+					clients.add(t); // fügt den Client zu die Liste von Clients hinzu
 				}
 				catch (SocketTimeoutException timeout)
 				{
