@@ -11,17 +11,19 @@ public class ue_5 {
             - it also should be checked, if the given File is a file or a Directory. + the console messages need to have the information whether it was created or not.
                 -> IF Yes: Directory C:\campus02\test\demo4  created?: false
                 -> IF No: Directory C:\campus02\test\demo4  created?: true
-
-        Question: What is the difference Between mkdirs() and mkdir() ?
-        Question: What does mkdirs() return?
-        Question: What does mkdir() return?
          */
 
-        File dir = new File("C:\\test\\alt");
+        File dir = new File("C:\\test\\alt1\\da.exe");
         createDirectories(dir);
     }
 
     public static void createDirectories(File f) {
-
+        // check if file is a file or directory
+        if (f.isDirectory()) {
+            // perform mkdirs to try create a directory - returns true if success, returns false if no success
+            System.out.println("Directory " + f.getAbsolutePath() + " created?: " + f.mkdir());
+        } else {
+            System.out.println("Directory " + f.getAbsolutePath() + " created?: " + f.mkdir());
+        }
     }
 }
