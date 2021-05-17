@@ -21,17 +21,6 @@ public class ue_6 {
     }
 
     public static void rename_files(File source) {
-        if (source.isDirectory()) {
-            for (File oldfile : source.listFiles()) {
-                System.out.println(oldfile.getParent());
-                File newfile = new File(oldfile.getParent()+"\\1_"+oldfile.getName());
-                System.out.println(newfile.getAbsolutePath());
-                if(oldfile.renameTo(newfile)){
-                    System.out.println("File renamed");
-                }else{
-                    System.out.println("Sorry! the file can't be renamed");
-                }
-            }
-        }
+
     }
 }

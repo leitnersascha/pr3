@@ -22,12 +22,6 @@ public class ue_5 {
     }
 
     public static void createDirectories(File f) {
-        // check if file is a file or directory
-        if (!f.isFile() && !f.isDirectory()) {
-            // perform mkdirs to try create a directory - returns true if success, returns false if no success
-            System.out.println("Directory " + f.getAbsolutePath() + " created?: " + f.mkdirs());
-        } else {
-            System.out.println("Directory " + f.getAbsolutePath() + " created?: " + f.mkdirs());
-        }
+
     }
 }
