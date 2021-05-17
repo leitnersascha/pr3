@@ -1,12 +1,11 @@
 package at.campus02.pr3.fileio.file;
 
-
 import java.io.File;
 
-public class list_sub_directories {
+public class ue_3 {
 
     public static void main(String[] args) {
-        File dir = new File("C:\\Users\\campus02\\Downloads");
+        File dir = new File("C:\\Users\\Work\\Desktop\\PR3-21");
         System.out.println("Original Path: " + dir.getAbsolutePath());
         listDirectory(dir.getAbsolutePath());
     }
@@ -22,6 +21,8 @@ public class list_sub_directories {
                 // Rekursiver Aufruf
                 listDirectory(f.getAbsolutePath());
                 System.out.println("Directory: " + f.getAbsolutePath());
+            } else {
+                System.out.println("File: " + f.getAbsolutePath());
             }
         }
 

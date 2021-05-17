@@ -2,12 +2,12 @@ package at.campus02.pr3.fileio.file;
 
 import java.io.File;
 
-public class ue_dateien_eigenschaften {
+public class ue_1 {
 
     public static void main(String[] args) {
         /*
-        Uebung:
-        Create a method, which has a parameter File as method
+        Uebung_1:
+        Create a method, which has the parameter File
             The method should print the following information of a file on the console:
             - Does this file exist?
             - Name of the File
@@ -18,9 +18,10 @@ public class ue_dateien_eigenschaften {
             - Is this file readable?
             - Is this File writeable
             - File Size
+            - ...
          */
 
-        File file = new File("live-demo.iml");
+        File file = new File("code.iml");
         readFileInformation(file);
     }
 

@@ -2,7 +2,7 @@ package at.campus02.pr3.fileio.file;
 
 import java.io.File;
 
-public class ue_creation_of_directories {
+public class ue_5 {
 
     public static void main(String[] args) {
         /*

@@ -2,11 +2,14 @@ package at.campus02.pr3.fileio.file;
 
 import java.io.File;
 
-public class ue_list_data_information {
+public class ue_4 {
 
     public static void main(String[] args) {
         /*
+        Goal: Write a program, which prints all files + relevant attributes of the files to the console. And we also want to know how much storage they need. (Print the total storage of the files to the console at the end.)
         Tip: use listFiles()
+
+        Details:
         Create a method, which takes a file as parameter. (Directory Path)
         - Check if the File is a Directory
         - All files of the given directory need to be printed, with the following content:
@@ -22,7 +25,7 @@ public class ue_list_data_information {
 
          */
 
-        File dir = new File("C:\\Users\\campus02\\Downloads");
+        File dir = new File("C:\\Users\\Work\\Desktop\\PR3-21\\00 - Vorstellung");
         printDirectoryContent(dir);
     }
 
@@ -32,13 +35,12 @@ public class ue_list_data_information {
             long filesize = 0;
             // Go trough the directory; listFiles() returns an array of Files (Objects)
             for (File file : f.listFiles()) {
-                System.out.println("Filename: " + file.getName() + "Size: " + file.length());
+                System.out.println("Filename: " + file.getName() + " Size: " + file.length());
                 filesize = filesize + file.length();
             }
             // print out the complete size of the directory
             System.out.println(filesize);
-        }
-        else{
+        } else {
             System.out.println("No Directory");
         }
     }
