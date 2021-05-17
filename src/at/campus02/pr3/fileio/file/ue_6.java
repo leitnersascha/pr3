@@ -32,7 +32,8 @@ public class ue_6 {
     public static void createFiles(File fileList) {
         for (int i = 0; i < 10; i++) {
             try {
-                File myObj = new File(fileList.getAbsolutePath() + "//" + ThreadLocalRandom.current().nextInt() + ".mp3");
+                File myObj = new File(fileList.getAbsolutePath() + "//"
+                        + ThreadLocalRandom.current().nextInt() + ".mp3");
                 if (myObj.createNewFile()) {
                     System.out.println("CREATE: " + myObj.getAbsolutePath());
                 } else {
@@ -45,9 +46,9 @@ public class ue_6 {
         }
     }
 
-    public static void rename_files(File fileList) {
-        if (fileList.isDirectory()) {
-            for (File oldFile : fileList.listFiles()) {
+    public static void rename_files(File directory) {
+        if (directory.isDirectory()) {
+            for (File oldFile : directory.listFiles()) {
                 File newFile = new File(oldFile.getParent() + "\\1_" + oldFile.getName());
                 if (oldFile.renameTo(newFile)) {
                     System.out.println("RENAME: " + oldFile.getAbsolutePath() + " to " + newFile.getAbsolutePath());
@@ -58,9 +59,9 @@ public class ue_6 {
         }
     }
 
-    public static void delete_files(File fileList) {
-        if (fileList.isDirectory()) {
-            for (File file : fileList.listFiles()) {
+    public static void delete_files(File directory) {
+        if (directory.isDirectory()) {
+            for (File file : directory.listFiles()) {
                 file.delete();
                 System.out.println("DELETED: " + file.getAbsolutePath());
             }
