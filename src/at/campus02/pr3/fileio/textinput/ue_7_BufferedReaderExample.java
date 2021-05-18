@@ -5,10 +5,13 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class BufferedReaderExample {
+import static java.nio.charset.StandardCharsets.ISO_8859_1;
+import static java.nio.charset.StandardCharsets.UTF_8;
+
+public class ue_7_BufferedReaderExample {
     public static void main(String[] args) throws IOException {
         // öffnet die Datei test.txt
-        File file = new File("testout.txt");
+        File file = new File("umlaute.txt");
         // liefert einen textorientierten Stream der Datei zurück
         FileReader fileReader = new FileReader(file);
         // legt einen BufferedReader über den FileReader.

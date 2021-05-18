@@ -12,7 +12,7 @@ public class InputStreamReaderExample {
 
     public static void main(String[] args) {
         try  {
-            InputStream stream = new FileInputStream("umlaute.txt");
+            InputStream stream = new FileInputStream("testout.txt");
             Reader reader = new InputStreamReader(stream);
             int data = reader.read();
             while (data != -1) {

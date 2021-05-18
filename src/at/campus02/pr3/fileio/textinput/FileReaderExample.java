@@ -3,6 +3,8 @@ package at.campus02.pr3.fileio.textinput;
 import java.io.FileReader;
 import java.io.IOException;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 public class FileReaderExample {
     /*
         Java FileReader class is used to read data from the file.
