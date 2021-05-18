@@ -1,4 +1,4 @@
-package at.campus02.pr3.fileio.ue_text_io;
+package at.campus02.pr3.fileio.ue_10_text_io;
 
 import java.io.*;
 

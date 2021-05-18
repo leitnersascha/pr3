@@ -4,7 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class BufferedWriter_example {
+public class ue_9_BufferedWriter_example {
     /*
     Methods of BufferedWriter
         The BufferedWriter class provides implementations for different methods present in Writer.
@@ -15,7 +15,18 @@ public class BufferedWriter_example {
      */
 
     public static void main(String args[]) throws IOException {
+        FileWriter fileWriter = new FileWriter("neue_datei_18mai.txt");
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        // BufferedWriter bufferedReader = new BufferedWriter(new FileWriter("neue_datei_18mai.txt"));
 
+        String data = "Das ist ein test";
+        bufferedWriter.write(data);
+        bufferedWriter.write(data);
+        bufferedWriter.newLine();
+        bufferedWriter.write(data);
+        bufferedWriter.flush();
+        bufferedWriter.close();
+        System.out.println("Fertig");
 
     }
 }

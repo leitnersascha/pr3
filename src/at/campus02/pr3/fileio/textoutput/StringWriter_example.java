@@ -14,11 +14,15 @@ public class StringWriter_example {
      */
 
     public static void main(String[] args) {
-
         String data = "This is the text in the string.";
 
         try {
-
+            StringWriter stringWriter = new StringWriter();
+            stringWriter.write(data);
+            stringWriter.append("append");
+            stringWriter.flush();
+            stringWriter.close();
+            System.out.println("Data of StringWriter: "+ stringWriter);
         } catch (Exception e) {
             e.getStackTrace();
         }
