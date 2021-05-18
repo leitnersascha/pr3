@@ -29,46 +29,6 @@ public class ProductManager {
 
  */
 
-    List<Product> productList = new ArrayList<>();
 
-    public void add(Product p) {
-        productList.add(p);
-    }
-
-    public void saveToFile(String path) throws IOException {
-        File file = new File(path);
-        FileOutputStream fileOutputStream = new FileOutputStream(file);
-        // BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
-        ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-        for (Product p : productList) {
-            objectOutputStream.writeObject(p);
-        }
-        objectOutputStream.flush();
-        objectOutputStream.close();
-        System.out.println("Saving Done");
-    }
-
-    public void readFromFile(String path) throws IOException, ClassNotFoundException {
-        FileInputStream fileInputStream = new FileInputStream(path);
-        ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-        List<Product> productList = new ArrayList<>();
-        Boolean cont = true;
-        while (cont) {
-            try {
-                Product product = (Product) objectInputStream.readObject();
-                System.out.println(product);
-                if (product != null) {
-                    productList.add(product);
-                } else {
-                    cont = false;
-                }
-            } catch (EOFException e) {
-                break;
-            }
-        }
-        System.out.println("Read Object data: ");
-        System.out.println(productList);
-        objectInputStream.close();
-    }
 
 }

@@ -15,16 +15,7 @@ public class BufferedWriter_example {
      */
 
     public static void main(String args[]) throws IOException {
-        FileWriter file = new FileWriter("bufferedWriter.txt");
-        BufferedWriter bufferedWriter = new BufferedWriter(file);
 
-        String data = " das ist ein test ";
-        bufferedWriter.write(data);
-        bufferedWriter.newLine();
-        bufferedWriter.write(data);
-        bufferedWriter.flush();
-        bufferedWriter.close();
-        System.out.println("Fertig");
 
     }
 }

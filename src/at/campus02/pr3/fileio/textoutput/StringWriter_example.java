@@ -18,17 +18,7 @@ public class StringWriter_example {
         String data = "This is the text in the string.";
 
         try {
-            // Create a StringWriter with default string buffer capacity
-            StringWriter stringWriter = new StringWriter();
 
-            // Writes data to the string buffer
-            stringWriter.write(data);
-
-            // Prints the string writer
-            System.out.println("Data in the StringWriter: " + stringWriter);
-
-            stringWriter.flush();
-            stringWriter.close();
         } catch (Exception e) {
             e.getStackTrace();
         }

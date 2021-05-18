@@ -16,24 +16,7 @@ public class PrintWriter_example {
      */
 
     public static void main(String[] args) throws IOException {
-        // Datei wird geöffnet und in PrintWriter gekapselt
-        File f = new File("campus02-test.txt");
 
-        FileWriter fileWriter = new FileWriter(f);
-        PrintWriter printWriter = new PrintWriter(fileWriter);
-
-        // Mittels println(...) werden Zwei Zeilen geschrieben. Jede Zeile wird richtig abgeschlosen.
-        printWriter.println("FirstLn");
-        printWriter.println("SecondLn");
-
-        // flush() löst das Schreiben aus
-        // Flushing a stream ensures that all data that has been written
-        // to that stream is output, including clearing any that may have been buffered.
-        printWriter.flush();
-
-        // close() gibt die Datei wieder frei
-        printWriter.close();
-        System.out.println("Fertig");
 
     }
 
