@@ -11,7 +11,7 @@ public class ue_8_with_ExceptionHandling {
     Verwenden Sie weiters die Klassen: InputStreamReader und BufferedReader
      */
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         // Ready to receive user Input
         InputStreamReader inputStreamReader = new InputStreamReader(System.in);
 
@@ -20,18 +20,26 @@ public class ue_8_with_ExceptionHandling {
 
         // Zeile für Zeile wird eingelesen.
         String line;
-        while ((line = bufferedReader.readLine()) != null) {
-            System.out.println(line);
-            // Check if the input is STOP
-            if (line.equals("STOP")) {
-                // IF Yes, go out of the while loop
-                break;
+        try {
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+                // Check if the input is STOP
+                if (line.equals("STOP")) {
+                    // IF Yes, go out of the while loop
+                    break;
+                }
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                // BR wird wird geschlossen
+                bufferedReader.close();
+                // Information, dass das Programm vorbei ist.
+                System.out.println("Closed");
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
-
-        // BR wird wird geschlossen
-        bufferedReader.close();
-        // Information, dass das Programm vorbei ist.
-        System.out.println("Closed");
     }
 }
