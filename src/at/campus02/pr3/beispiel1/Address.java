@@ -2,10 +2,10 @@ package at.campus02.pr3.beispiel1;
 
 public class Address {
 
-    private String firstname;
-    private String lastname;
-    private String mobilNumber;
-    private String email;
+    public String firstname;
+    public String lastname;
+    public String mobilNumber;
+    public String email;
 
     public Address(String firstname, String lastname, String mobilNumber, String email) {
         this.firstname = firstname;
