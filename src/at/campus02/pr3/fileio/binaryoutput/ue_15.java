@@ -22,7 +22,6 @@ public class ue_15 {
         FileOutputStream fileOutputStream = new FileOutputStream(file);
 
         char c;
-
         while ((c = (char) System.in.read()) != 'x') {
             fileOutputStream.write(c);
             System.out.println(c);
