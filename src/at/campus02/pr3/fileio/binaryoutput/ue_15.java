@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class ue_write_binary_data {
+public class ue_15 {
     /*
 
     Java FileOutputStream is an output stream used for writing data to a file.

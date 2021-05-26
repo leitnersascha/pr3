@@ -2,7 +2,7 @@ package at.campus02.pr3.fileio.binaryoutput;
 
 import java.io.*;
 
-public class ue_binary_io_ue1 {
+public class ue_16 {
     /*
     Schreiben Sie ein Programm, das ein String- Objekt „Hallo Welt“ in eine Datei „object.dat“ serialisiert und anschließend aus dieser wieder ausliest und auf die Konsole schreibt.
     Verwenden Sie die Klassen FileOutputStream und ObjectOutputStream sowie FileInputStream und ObjectInputStream

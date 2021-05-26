@@ -19,7 +19,7 @@ public class ue_10_write_file_from_user_input {
         PrintWriter printWriter = new PrintWriter(fileWriter);
 
         System.out.println("Bitte geben Sie ihr Fach sowie Note ein:");
-        // Unser Input kann empfangen werden
+        // User Input kann empfangen werden
         InputStreamReader inputStreamReader = new InputStreamReader(System.in);
         // legt einen BufferedReader über den inputStreamReader.
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
