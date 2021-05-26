@@ -16,27 +16,7 @@ public class ue_16 {
         byte[] b = {'e', 'x', 'a', 'm', 'p', 'l', 'e'};
 
         try {
-            // create a new file with an ObjectOutputStream
-            File file = new File("text.txt");
-            FileOutputStream fileOutputStream = new FileOutputStream(file);
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 
-            // write something in the file
-            objectOutputStream.writeObject(s);
-            objectOutputStream.writeObject(b);
-            objectOutputStream.flush();
-            objectOutputStream.close();
-
-            // create an ObjectInputStream for the file we created before
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
-
-            // read and print an object and cast it as string
-            System.out.println("" + (String) ois.readObject());
-
-            // read and print an object and cast it as string
-            byte[] read = (byte[]) ois.readObject();
-            String s2 = new String(read);
-            System.out.println("" + s2);
         } catch (Exception ex) {
             ex.printStackTrace();
         }

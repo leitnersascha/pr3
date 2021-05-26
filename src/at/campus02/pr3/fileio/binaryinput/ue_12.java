@@ -7,6 +7,7 @@ import java.io.IOException;
 
 public class ue_12 {
 
+
     public static void main(String[] args) throws IOException {
         File file = new File("test-output.txt");
         // FileInputStream stellt eine Verbindung zur Datei her. Datei wird geöffnet.
