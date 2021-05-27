@@ -11,6 +11,7 @@ public class RunnableExample implements Runnable {
          * currentThread(): Returns a reference to the currently executing thread object.
          * .getName(): Returns this thread's name.
          */
+
         System.out.println("Inside : " + Thread.currentThread().getName());
 
         System.out.println("Creating Runnable ...");
