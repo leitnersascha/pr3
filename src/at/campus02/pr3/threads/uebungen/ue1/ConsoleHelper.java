@@ -7,6 +7,7 @@ public class ConsoleHelper {
 
     public static String readLine() {
 
+        return null;
     }
 
 }

@@ -26,40 +26,54 @@ public class AddressManager {
                 '}';
     }
 
-    public void loadFromCsv(String path, String separator) throws AddressLoadException, AddressLoadWrongFormatException, IOException {
+    public void loadFromCsv(String path, String separator) throws AddressLoadWrongFormatException, AddressLoadException {
         addresses.removeAll(addresses);
-        FileReader fr = new FileReader(path);
-        BufferedReader br = new BufferedReader(fr);
+        try {
+            FileReader fr = new FileReader(path);
+            BufferedReader br = new BufferedReader(fr);
 
-        String temp;
-        while (((temp = br.readLine()) != null)) {
-            String[] tempp = temp.split(separator);
-            if (tempp.length != 4)
-                throw new AddressLoadWrongFormatException("4 Spalten erwartet!");
+            String temp;
+            while (((temp = br.readLine()) != null)) {
+                String[] tempp = temp.split(separator);
+                System.out.println(tempp.length);
+                if (tempp.length != 4)
+                    throw new AddressLoadWrongFormatException("4 Spalten erwartet!");
 
-            addresses.add(new Address(tempp[0], tempp[1], tempp[2], tempp[3]));
+                addresses.add(new Address(tempp[0], tempp[1], tempp[2], tempp[3]));
+            }
+            br.close();
+        } catch (IOException e) {
+            throw new AddressLoadException(e);
         }
-        br.close();
     }
 
-    public void exportToCsv(String path, String separator) throws AddressExportException,
-            IOException {
-        FileWriter fw = new FileWriter(path);
-        PrintWriter pw = new PrintWriter(fw);
-        BufferedWriter bufferedWriter = new BufferedWriter(fw);
+    public void exportToCsv(String path, String separator) throws AddressExportException, AddressExportFileAlreadyExistsException {
+        try {
+            /*
+            File f = new File(path);
+            if (f.exists()) {
+                throw new AddressExportFileAlreadyExistsException("File existiert bereits");
+            }
+             */
 
-        for (Address a : getAddresses()) {
-            bufferedWriter.write(a.getFirstname() + separator + a.getLastname()
-                    + separator + a.getMobilNumber() + separator + a.getEmail());
-            bufferedWriter.newLine();
-            // pw.println(a.getFirstname() + separator + a.getLastname()
-            //       + separator + a.getMobilNumber() + separator + a.getEmail());
+            FileWriter fw = new FileWriter(path);
+            // PrintWriter pw = new PrintWriter(fw);
+            BufferedWriter bufferedWriter = new BufferedWriter(fw);
+
+            for (Address a : getAddresses()) {
+                bufferedWriter.write(a.getFirstname() + separator + a.getLastname()
+                        + separator + a.getMobilNumber() + separator + a.getEmail());
+                bufferedWriter.newLine();
+                // pw.println(a.getFirstname() + separator + a.getLastname()
+                //       + separator + a.getMobilNumber() + separator + a.getEmail());
+            }
+
+            bufferedWriter.flush();
+            bufferedWriter.close();
+            // pw.flush();
+            // pw.close();
+        } catch (IOException e) {
+            throw new AddressExportException(e);
         }
-
-        bufferedWriter.flush();
-        bufferedWriter.close();
-        // pw.flush();
-        // pw.close();
     }
-
 }
