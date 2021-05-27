@@ -12,7 +12,5 @@ If you share data between threads then you must synchronize access to that share
  */
 
 public class Worker {
-
-
 }
 
