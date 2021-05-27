@@ -10,7 +10,7 @@ public class Worker implements Runnable {
     private Konto k1;
     private Konto k2;
 
-    private static Object lock = new Object();
+    private static Object lock = new Object(); // SPERROBJEKT
 
     public Worker(char sign, Konto k1, Konto k2) {
         this.sign = sign;

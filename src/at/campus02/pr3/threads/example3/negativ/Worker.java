@@ -12,8 +12,8 @@ public class Worker implements Runnable {
 	
 	public Worker(char sign, Konto k1, Konto k2) {
 		this.sign = sign;
-		this.k1 = k1;
-		this.k2 = k2;
+		this.k1 = k1; //A 100 //B 200
+		this.k2 = k2; //A 200 //B 100
 	}
 
 	@Override
@@ -31,7 +31,7 @@ public class Worker implements Runnable {
 
 			k2.setWert(wert2 + 10);
 			System.out.println(sign + ": 10 auf k2");
-			
+
 			try {
 				Thread.sleep(sleepIntervall);
 			} catch (InterruptedException e) {

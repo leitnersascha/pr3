@@ -6,8 +6,14 @@ import java.io.InputStreamReader;
 public class ConsoleHelper {
 
     public static String readLine() {
+        InputStreamReader isr = new InputStreamReader(System.in);
+        BufferedReader br = new BufferedReader(isr);
 
-        return null;
+        try {
+            return br.readLine();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
-
 }
