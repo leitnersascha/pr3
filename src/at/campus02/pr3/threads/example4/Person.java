@@ -12,19 +12,7 @@ public class Person implements Runnable {
 
     @Override
     public void run() {
-        // Während dieser Synchornized-Block ausgeführt wird, darf
-        // kein anderer, der sich auf das selbe "Sperr-Objekt bezieht",
-        // ausgeführt werden.
-        synchronized (lock) {
-            for (int i = 0; i < 10; i++) {
-                System.out.println(name);
-                try {
-                    Thread.sleep(100);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
+
     }
 
 }

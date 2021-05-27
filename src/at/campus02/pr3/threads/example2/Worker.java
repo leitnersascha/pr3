@@ -16,18 +16,6 @@ public class Worker implements Runnable {
 
     @Override
     public void run() {
-        for (int i = 0; i < 1000; i++) {
-            if (isRunning) {
-                try {
-                    Thread.sleep(100);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                System.out.println(i + " " + Thread.currentThread().getName() + " " + sign);
-            }
-            if (!isRunning){
-                break;
-            }
-        }
+
     }
 }
