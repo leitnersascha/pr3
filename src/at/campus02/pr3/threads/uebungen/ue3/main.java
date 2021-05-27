@@ -12,7 +12,6 @@ public class main {
         try {
             t1.join();
             t2.join();
-
         } catch (Exception e) {
             e.printStackTrace();
         }

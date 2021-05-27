@@ -12,7 +12,7 @@ If you share data between threads then you must synchronize access to that share
  */
 
 public class Worker implements Runnable {
-    private final int sleepIntervall = 1000; //mse
+    private final int sleepInterval = 1000; //mse
     private int counter = 0;
     private static Object lock = new Object();
 
@@ -23,7 +23,7 @@ public class Worker implements Runnable {
                 System.out.println(Thread.currentThread().getName() +
                         " Counter   ---   " + counter++);
                 try {
-                    Thread.sleep(sleepIntervall);
+                    Thread.sleep(sleepInterval);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
