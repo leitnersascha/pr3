@@ -1,10 +1,6 @@
 package at.campus02.pr3.network.beispiel2;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -17,21 +13,23 @@ public class UE_2_WriteToURL
 		{
 			url = new URL("https://www.wetter.at");
 			URLConnection conn = url.openConnection();
-			// conn.setDoOutput(true);
+			conn.setDoOutput(true);
 			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
 
-			bw.write("GET /wetter/oesterreich/steiermark/graz/index.html HTTP/1.1");
+			bw.write("GET /wetter/oestfferreich/suedtirol/terlan HTTP/1.1");
 			bw.newLine();
-			bw.write("Browser: FIREJAVA");
+			bw.write("User-Agent: FIREJAVA");
 			bw.newLine();
 			bw.newLine();
 			bw.flush();
 
 			BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-
+			System.out.println(conn.getHeaderFields());
+			PrintWriter pw = new PrintWriter("content.html");
 			String line;
 			while ((line = br.readLine()) != null)
 			{
+				pw.println(line);
 				System.out.println(line);
 			}
 		}
