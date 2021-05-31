@@ -44,6 +44,7 @@ public class main {
         }
 
         System.out.println("EINGABE Fertig!");
+        System.out.println(t3.getName() + " " + t3.getState());
 
     }
 }
