@@ -15,14 +15,14 @@ public class WriteToURLConnection
 		URL url;
 		try
 		{
-			url = new URL("http://www.wetter.at");
+			url = new URL("https://www.wetter.at");
 			URLConnection conn = url.openConnection();
-			//conn.setDoOutput(true);
+			// conn.setDoOutput(true);
 			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
 
 			bw.write("GET /wetter/oesterreich/steiermark/graz/index.html HTTP/1.1");
 			bw.newLine();
-			bw.write("Host: www.wetter.at");
+			bw.write("Browser: FIREJAVA");
 			bw.newLine();
 			bw.newLine();
 			bw.flush();

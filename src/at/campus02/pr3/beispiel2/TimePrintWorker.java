@@ -4,4 +4,8 @@ import java.util.Date;
 
 public class TimePrintWorker extends Worker implements Runnable {
 
+    @Override
+    public void run() {
+
+    }
 }

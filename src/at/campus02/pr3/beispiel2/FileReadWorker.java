@@ -8,4 +8,8 @@ import java.util.ArrayList;
 
 public class FileReadWorker extends Worker implements Runnable {
 
+    @Override
+    public void run() {
+
+    }
 }
