@@ -8,7 +8,7 @@ import java.io.OutputStreamWriter;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class WriteToURLConnection
+public class UE_2_WriteToURL
 {
 	public static void main(String[] args)
 	{
