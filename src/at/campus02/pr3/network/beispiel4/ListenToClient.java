@@ -1,76 +1,51 @@
 package at.campus02.pr3.network.beispiel4;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class ListenToClient
-{
-	// start via CommandLine: telnet localhost 9090
-	public static void main(String[] args)
-	{
-		BufferedReader br = null;
-		BufferedWriter bw = null;
-		ServerSocket server = null;
-		Socket connectionToClient = null;
+public class ListenToClient {
+    // start via CommandLine (cmd): telnet localhost 9090
+    public static void main(String[] args) throws IOException {
+        System.out.println("Warte auf eingehende Verbindungen - Verbinde mit telnet localhost 9090");
+        ServerSocket serverSocket = new ServerSocket(9090);
+        Socket socket = serverSocket.accept(); // Listens for a connection to be made to this socket and accepts it. The method blocks until a connection is made.
 
-		try
-		{
-			System.out.println("Warte...");
-			server = new ServerSocket(9090);
-			connectionToClient = server.accept();
-			br = new BufferedReader(new InputStreamReader(connectionToClient.getInputStream()));
-			bw = new BufferedWriter(new OutputStreamWriter(connectionToClient.getOutputStream()));
+        BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+        bufferedWriter.write("HELLO");
+        bufferedWriter.newLine();
+        bufferedWriter.flush();
 
-			bw.write("HELLO");
-			bw.newLine();
-			bw.flush();
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        String command;
+        while ((command = bufferedReader.readLine()) != null) {
+            System.out.println(command);
 
-			String command;
-			while ((command = br.readLine()) != null)
-			{
-				if ("TIME".equals(command))
-				{
-					Calendar cal = GregorianCalendar.getInstance();
-					bw.write(cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE) + ":"
-							+ cal.get(Calendar.SECOND));
-					bw.newLine();
-					bw.flush();
-				}
-				else if ("PORT".equals(command))
-				{
-					bw.write("Port:" + connectionToClient.getPort());
-					bw.newLine();
-					bw.flush();
-				}
-				else if ("END".equals(command))
-				{
-					bw.write("Bye");
-					bw.newLine();
-					bw.flush();
-					break;
-				}
-				else
-				{
-					bw.write("unknown command");
-					bw.newLine();
-					bw.flush();
-				}
-			}
-			System.out.println("Beendet");
+            if ("TIME".equals(command)) {
+                Calendar cal = GregorianCalendar.getInstance();
+                bufferedWriter.write(cal.get(Calendar.HOUR_OF_DAY) + " : " + cal.get(Calendar.MINUTE) + " : " + cal.get(Calendar.SECOND));
+                bufferedWriter.newLine();
+                bufferedWriter.flush();
+            } else if ("PORT".equals(command)) {
+                bufferedWriter.write("PORT: " + socket.getLocalPort()); // -> 9090
+                bufferedWriter.newLine();
+                bufferedWriter.flush();
+            } else if ("END".equals(command)) {
+                bufferedWriter.write("BYE");
+                bufferedWriter.newLine();
+                bufferedWriter.flush();
+                break;
+            } else {
+                bufferedWriter.write("unknown command");
+                bufferedWriter.newLine();
+                bufferedWriter.flush();
+            }
+        }
 
-		}
-		catch (IOException e)
-		{
-			e.printStackTrace();
-		}
-
-	}
-
+        bufferedReader.close();
+        bufferedWriter.close();
+        System.out.println("Beendet.");
+    }
 }
