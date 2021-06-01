@@ -1,8 +1,7 @@
-package at.campus02.pr3.threads.uebungen.ue3a;
-
+package at.campus02.pr3.test;
 
 public class main {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         // COUNTER:
         Worker w1 = new Worker();
         // Worker w2 = new Worker();
@@ -38,23 +37,13 @@ public class main {
         try {
             // t3.join();
             t3.interrupt(); // Alternative to t3.stop();
-            System.out.println(consoleHelper.isRunning);
-            consoleHelper.setRunning(false);
-            System.out.println(consoleHelper.isRunning);
             System.out.println(t3.getName() + " " + t3.getState());
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        t3.stop();
         System.out.println("EINGABE Fertig!");
         System.out.println(t3.getName() + " " + t3.getState());
-        t3.interrupt();
-        System.out.println("ENDE");
-        System.out.println(t1.getName() + " " + t1.getState());
-        System.out.println(t2.getName() + " " + t2.getState());
-        System.out.println(t3.getName() + " " + t3.getState());
-
 
     }
 }
-
