@@ -10,7 +10,6 @@ public class Demo2 {
         {
             try {
                 System.out.print("Bitte URL eingeben:");
-
                 BufferedReader userInput = new BufferedReader(new InputStreamReader(System.in));
                 URL url = new URL(userInput.readLine());
                 BufferedReader connectionInput = new BufferedReader(new InputStreamReader(url.openStream()));
@@ -19,12 +18,12 @@ public class Demo2 {
 
                 String s;
                 while ((s = connectionInput.readLine()) != null) {
-
                     System.out.println(s);
                     pw.println(s);
                 }
 
                 connectionInput.close();
+                pw.flush();
                 pw.close();
             } catch (MalformedURLException e) {
                 e.printStackTrace();
