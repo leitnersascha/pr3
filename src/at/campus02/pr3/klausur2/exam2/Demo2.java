@@ -21,7 +21,7 @@ public class Demo2 {
                     System.out.println(s);
                     pw.println(s);
                 }
-
+                userInput.close();
                 connectionInput.close();
                 pw.flush();
                 pw.close();
